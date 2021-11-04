@@ -1,0 +1,18 @@
+version: "3"
+services:
+  tts:
+    build: .
+    image: tts
+    container_name: tts
+    working_dir: /root
+    environment:
+      - PULSE_SERVER=docker.for.mac.localhost
+    ports:
+      - "8888:8888"
+    tty: true
+    volumes:
+      - ~/share:/root/share
+      - ./:/root/.cache/ttslearn
+      - type: bind
+        source: ~/.config/pulse
+        target: /root/.config/pulse

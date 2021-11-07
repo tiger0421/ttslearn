@@ -12,7 +12,7 @@ services:
     tty: true
     volumes:
       - ~/share:/root/share
-      - ./:/root/.cache/ttslearn
+      - ./cache:/root/.cache/ttslearn
       - type: bind
         source: ~/.config/pulse
         target: /root/.config/pulse
